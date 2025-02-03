@@ -145,20 +145,22 @@ const LandingPage = () => {
               >
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <ChevronDown
-                  className={`w-6 h-6 transform transition-transform ${
+                  className={`w-6 h-6 transform transition-transform duration-300 ${
                     activeAccordion === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               <div
-                className="px-6 overflow-hidden transition-all duration-300 ease-in-out"
+                className="transition-all duration-300 ease-in-out overflow-hidden"
                 style={{
-                  maxHeight: activeAccordion === index ? '500px' : '0',
-                  paddingTop: activeAccordion === index ? '1rem' : '0',
-                  paddingBottom: activeAccordion === index ? '1rem' : '0',
+                  maxHeight: activeAccordion === index ? '1000px' : '0px',
+                  opacity: activeAccordion === index ? 1 : 0,
+                  padding: activeAccordion === index ? '0 1.5rem 1.5rem' : '0 1.5rem'
                 }}
               >
-                <p className="text-gray-600 leading-relaxed">{item.content}</p>
+                <p className="text-gray-600 leading-relaxed">
+                  {item.content}
+                </p>
               </div>
             </div>
           ))}
@@ -175,7 +177,7 @@ const LandingPage = () => {
           <div className="flex justify-between items-center">
           <div className="h-12 w-auto"> 
   <img
-    src="/public/assets/logo.png" // Ensure this path is correct
+    src="/assets/logo.png" // Ensure this path is correct
     alt="Delta Plumbers"
     className="h-full w-auto" // Make the image fill the container height and adjust width automatically
   />
@@ -279,7 +281,7 @@ const LandingPage = () => {
       
   <div className="relative h-screen min-h-[600px]">
     <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 opacity-75"></div>
-    <img src="public\assets\bg.jpg" alt="Plumber at work" className="w-full h-full object-cover"/>
+    <img src="/assets/bg.jpg" alt="Plumber at work" className="w-full h-full object-cover"/>
     <div className="absolute inset-0 flex items-center">
       <div className="container mx-auto px-4 text-white text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
@@ -388,7 +390,7 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="bg-gray-200 h-64 rounded-lg">
-                <img src="public\assets\Screenshot 2025-02-03 003950.png" alt="Map" className="w-full h-full object-cover rounded-lg"/>
+                <img src="/assets/Screenshot 2025-02-03 003950.png" alt="Map" className="w-full h-full object-cover rounded-lg"/>
               </div>
             </div>
           </div>
